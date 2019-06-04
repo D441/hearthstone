@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="background-image: url(images/bg.jpg); background-size: 100%">
+<div class="enemy" style="height: 350px"></div>
+<div class="player" style="height: 350px;"></div>
+<script type="text/javascript">
+	let sources = ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png", "images/7.png", "images/8.png", "images/9.png", "images/10.png"]
+	let sources[0] = {
+		hp: 1,
+		atk: 1
+	}
+	let sources[1] = {
+		hp: 2,
+		atk: 4
+	}
+	let sources[2] = {
+		hp: 3,
+		atk: 4
+	}
+	let sources[3] = {
+		hp: 4,
+		atk: 1
+	}
+	let sources[4] = {
+		hp: 5,
+		atk: 7
+	}
+	let sources[5] = {
+		hp: 6,
+		atk: 5
+	}
+	let sources[6] = {
+		hp: 7,
+		atk: 5
+	}
+	let sources[7] = {
+		hp: 8,
+		atk: 7
+	}
+	let sources[8] = {
+		hp: 9,
+		atk: 4
+	}
+	let sources[9] = {
+		hp: 5,
+		atk: 5
+	}
+	let getRandom = function(){
+		let rand = Math.random()*4
+		let round = Math.round(rand)
+		return round
+	}
+	let createEnemyCard = function(arg){
+		for(let index = 0; index<arg; index = index + 1){
+				let elem = document.createElement("img")
+				document.querySelector(".enemy").appendChild(elem)
+				elem.style.height = "250px"
+				let rand = Math.random()*9
+				let round = Math.round(rand)
+				elem.src = sources[round]	
+		}
+	}
+	let createPlayerCard = function(arg){
+		for(let index = 0; index<arg; index = index + 1){
+				let elem = document.createElement("img")
+				document.querySelector(".player").appendChild(elem)
+				elem.style.height = "250px"
+				let rand = Math.random()*9
+				let round = Math.round(rand)
+				elem.src = sources[round]
+		}
+	}	
+</script>
+</body>
+</html>
